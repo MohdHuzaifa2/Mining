@@ -642,10 +642,9 @@ button{font-family:inherit;cursor:pointer;}
   color:var(--white);
   overflow:hidden;
   position:relative;
-  padding: 0 80px 80px 80px;
+  padding: 0 0 80px 0;
 }
 .cta-inner{
-  width: 100%;
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -1071,6 +1070,14 @@ button{font-family:inherit;cursor:pointer;}
   }
   .nav-links a.active{border-bottom-color:rgba(255,255,255,.08);}
 
+  .contact-form {
+    padding-inline: 12px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
   /* Footer grid */
   .footer-grid{
     grid-template-columns:1fr 1fr;
@@ -1083,6 +1090,10 @@ button{font-family:inherit;cursor:pointer;}
   }
 
   /* Newsletter block */
+  .newsletter-content {
+    margin-left: 0;
+  }
+
   .newsletter-inner{
     flex-direction:column;
   }
@@ -1113,10 +1124,8 @@ button{font-family:inherit;cursor:pointer;}
   .contact-grid{grid-template-columns:1fr;}
 
   /* CTA section */
-  .cta-inner{flex-direction:column;text-align:center;}
   .cta-text{max-width:none;}
-  .cta-buttons{justify-content:center;}
-  .cta-graphic{width:280px;height:280px;right:0;}
+  /* .cta-graphic{width:280px;height:280px;right:0;} */
 
   /* Main nav: the two action buttons move out of the bar and into the
      toggleable menu, only visible while the menu is open. */
