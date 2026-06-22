@@ -176,12 +176,13 @@ button{font-family:inherit;cursor:pointer;}
 .announcement-close{
   flex-shrink:0;
   background:none;border:none;color:var(--neutral-400);
-  font-size:20px;line-height:1;padding:2px 6px;
+  font-size:24px;line-height:1;padding: 0;
 }
 .announcement-close:hover{color:var(--white);}
 
 .nav-wrapper {
   background:#1a1a1c;
+  border-top: 1px solid rgba(255,255,255,.15);
 }
 
 .main-nav{
@@ -297,11 +298,27 @@ button{font-family:inherit;cursor:pointer;}
   display:flex;
   align-items:center;
   gap:24px;
-  padding:8px var(--gutter);
-  overflow-x:auto;
-  scrollbar-width:none;
+  padding-block:8px;
+  width:max-content;
+  will-change:transform;
+  animation:ticker-scroll 40s linear infinite;
 }
-.ticker-track::-webkit-scrollbar{display:none;}
+.ticker:hover .ticker-track{
+  animation-play-state:paused;
+}
+.ticker-track-group{
+  display:flex;
+  align-items:center;
+  gap:24px;
+  flex-shrink:0;
+}
+@keyframes ticker-scroll{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
+}
+@media (prefers-reduced-motion: reduce){
+  .ticker-track{animation:none;}
+}
 .ticker-item{
   display:flex;align-items:center;gap:21px;
   flex-shrink:0;
@@ -505,7 +522,7 @@ button{font-family:inherit;cursor:pointer;}
   bottom:-110px;
   width:340px;height:340px;
   border-radius:50%;
-  background: url("./Logo\ part.png");
+  background: url("./assets/Logo\ part.png");
   filter:blur(0.3px);
 }
 .contact-info-content{position:relative;z-index:1;}
